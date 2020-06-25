@@ -5,7 +5,7 @@ DRSSR is a simple dependency for convert a React Component in a plain string tha
 It can be used with a framework like [Oak]('https://deno.land/x/oak') for create dynamic or static page.
 
 ### Example
-```
+```typescript
     const app = () => {
         return (
             <div>
@@ -16,7 +16,12 @@ It can be used with a framework like [Oak]('https://deno.land/x/oak') for create
 
     const page = Page.fromElement(<App />);
 
+    const pageProd = Page.fromElement(<App />, {production : true})
+
     page.html(); // Return string representation of App component
 
     page.script('app'); // Return js chunk of code for hydrate React component and attach this component to element identified by 'app'
+
+    pageProd.script('app'); // Return an obfuscate js chunk of code for hydrate React component and attach this component to element identified by 'app'
+    
 ```

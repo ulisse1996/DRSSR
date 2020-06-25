@@ -14,9 +14,9 @@ It can be used with a framework like [Oak]('https://deno.land/x/oak') for create
         )
     }
 
-    const page = Page.fromElement(<App />);
+    const page = render(<App />);
 
-    const pageProd = Page.fromElement(<App />, {production : true})
+    const pageProd = render(<App />, {production : true})
 
     page.html(); // Return string representation of App component
 
